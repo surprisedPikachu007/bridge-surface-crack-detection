@@ -1,0 +1,9 @@
+predict dataset
+Precision: 1.0
+Recall: 1.0
+F1: 1.0
+
+test dataset
+Precision: 0.9900990099009901
+Recall: 1.0
+F1: 0.9950248756218906
