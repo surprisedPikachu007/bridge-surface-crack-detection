@@ -4,6 +4,10 @@ This is a deep learning model to detect surface cracks in bridges. The model is 
 The solution uses Transfer Learning to train the model. Transfer Learning is a technique that makes use of a pre-trained model to train a new model. Effectively, the pre-trained model acts as a general representation of the visual world. The pre-trained model is used as a feature extractor and the new model is trained on the extracted features. This technique is used to reduce the training time and to improve the accuracy of the model. We can take advantage of the already learned feature maps.
 
 In the 'Bridge Surface Crack Detection' problem, the MobileNetV2 architecture is used as the pre-trained model. The MobileNetV2 architecture is a convolutional neural network that is trained on the ImageNet dataset.
+
+The representations learned by a previous network are used to extract meaningful features from new samples. New classifiers are added, in this case Positive (Crack is present) and Negative (Crack is not present), which will be trained from scratch on top of the pre-trained model so as to repurpose the feature maps learned previously for the dataset.
+
+The entire model doesn't need to be retrained. There are already features in the base convolutional network that are generally helpful for classifying images. The pre-trained model's final classification component, however, is unique to the initial classification task (detection of cracks) and consequently unique to the set of classes on which it was trained.
 # Steps
 1. Clone the repository
 2. Install the required packages
